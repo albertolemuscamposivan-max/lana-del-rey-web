@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lana Del Rey — Biografía y Discografía</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="fonts/CormorantGaramond-VariableFont_wght.ttf">
+    <link rel="preconnect" href="fonts/PlayfairDisplay-VariableFont_wght.ttf" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+       
+        :root {
+            --bg-color: #fcf8f5;           
+            --text-color: #3d3235;        
+            --accent-pink: #d8a7b1;      
+            --accent-hover: #b87d89;      
+            --card-bg: #ffffff;           
+            --border-color: #e6d3d7;      
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Cormorant Garamond', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            line-height: 1.7;
+            padding-left: 220px; 
+            padding-right: 40px;
+        }
+
+  
+        @keyframes entradaMenu {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+
+        nav {
+            position: fixed;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            animation: entradaMenu 0.8s ease-out forwards;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        nav ul a {
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 150px;
+            text-align: center;
+            padding: 12px 0;
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        background-color 0.3s ease,
+                        color 0.3s ease,
+                        box-shadow 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        nav ul a:hover {
+            background-color: var(--accent-pink);
+            color: #ffffff;
+            border-color: var(--accent-pink);
+            transform: translateX(8px) scale(1.04);
+            box-shadow: 0 4px 15px rgba(216, 167, 177, 0.4);
+        }
+
+        nav ul a:active {
+            transform: translateX(4px) scale(0.98);
+        }
+
+       
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header.hero {
+            text-align: center;
+            margin-bottom: 70px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+        }
+
+        header.hero h1 {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        header.hero p.subtitle {
+            font-style: italic;
+            color: var(--accent-hover);
+            font-size: 1.4rem;
+        }
+
+       
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2.section-title {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--accent-pink);
+            display: inline-block;
+            margin-bottom: 25px;
+            padding-bottom: 5px;
+        }
+
+        section p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+     
+        
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .album-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .album-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(216, 167, 177, 0.25);
+        }
+
+        .album-card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            background-color: #eee;
+        }
+
+        .album-card h3 {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .album-card .year {
+            font-size: 0.95rem;
+            color: var(--accent-hover);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .album-card p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 1rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+        }
+
+      
+        
+        @media (max-width: 850px) {
+            body {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            nav {
+                position: relative;
+                left: 0;
+                top: 0;
+                transform: none;
+                margin-bottom: 40px;
+                animation: none;
+            }
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#biografia">Biografía</a></li>
+            <li><a href="#albumes">Álbumes</a></li>
+            <li><a href="#legado">Legado</a></li>
+        </ul>
+    </nav>
+
+  
+    <main>
+       
+        <header class="hero" id="inicio">
+            <h1>Lana Del Rey</h1>
+            <p class="subtitle">Nostalgia, glamour trágico y la poesía de la América moderna.</p>
+        </header>
+
+      
+        <section id="biografia">
+            <h2 class="section-title">Biografía</h2>
+            <p>
+                Elizabeth Woolridge Grant, conocida artísticamente como <strong>Lana Del Rey</strong>, nació el 21 de junio de 1985 en Nueva York. Criada en Lake Placid, comenzó a componer canciones a una edad temprana, desarrollando una voz artística única fuertemente influenciada por la cultura pop estadounidense de los años 50 y 60, el cine clásico y el romanticismo trágico.
+            </p>
+            <p>
+                Tras varios intentos bajo diferentes seudónimos, fue en 2011 cuando el sencillo independiente <em>"Video Games"</em> se convirtió en un fenómeno viral de internet, catapultándola a la fama mundial y estableciendo su estética barroca y melancólica que definiría la década.
+            </p>
+        </section>
+
+        <section id="albumes">
+            <h2 class="section-title">Discografía Principal</h2>
+            <div class="albums-grid">
+
+                
+                <article class="album-card">
+                    <img src="imagenes/Radio.jpg" alt="Born to Die">
+                    <h3>Born to Die</h3>
+                    <p class="year">2012</p>
+                    <p>El álbum debut que cambió el panorama del pop alternativo. Un viaje orquestal lleno de melodrama, glamour vintage y desamor.</p>
+                </article>
+
+                
+                <article class="album-card">
+                    <img src="imagenes/Ultraviolence album cover.jpg" alt="Ultraviolence">
+                    <h3>Ultraviolence</h3>
+                    <p class="year">2014</p>
+                    <p>Producido por Dan Auerbach, ofrece un sonido más sombrío, lleno de guitarras distorsionadas, rock psicodélico y letras melancólicas.</p>
+                </article>
+
+               
+                
+                <article class="album-card">
+                    <img src="imagenes/born to die Archives - Pepperdine Graphic.jpg" alt="Honeymoon">
+                    <h3>Honeymoon</h3>
+                    <p class="year">2015</p>
+                    <p>Un regreso a los arreglos cinematográficos y lentos, impregnado de una atmósfera veraniega, lánguida y poética.</p>
+                </article>
+
+               
+                <article class="album-card">
+                    <img src="imagenes/NFR by Lana Del Rey.jpg" alt="Norman Fucking Rockwell!">
+                    <h3>Norman Fucking Rockwell!</h3>
+                    <p class="year">2019</p>
+                    <p>Aclamado universalmente por la crítica como su obra maestra, combina folk-pop californiano con una lírica brillante sobre el sueño americano.</p>
+                </article>
+
+            </div>
+        </section>
+
+      
+        <section id="legado">
+            <h2 class="section-title">Legado e Influencia</h2>
+            <p>
+                Lana Del Rey ha transformado el sonido de la música pop contemporánea, introduciendo una cadencia más lenta, melancólica y cinematográfica que influyó en toda una generación de nuevos artistas. Su estética visual y temática ha dejado una marca indeleble en la cultura pop.
+            </p>
+        </section>
+        <div class="parallax parallax-1">
+    <h2>"Born to Die"</h2>
+</div>
+<div class="parallax parallax-2">
+    <h2>"Norman Fucking Rockwell!"</h2>
+</div>
+<div class="parallax parallax-3">
+    <h2>"Honeymoon"</h2>
+</div>
+<div class="parallax parallax-4">
+    <h2>"Ultraviolence"</h2>
+</div>
+
+
+        <footer>
+        
+            
+        </footer>
+    </main>
+
+</body>
+</html>
